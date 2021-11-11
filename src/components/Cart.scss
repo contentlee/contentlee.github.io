@@ -1,0 +1,75 @@
+table, tr, td, div{
+  box-sizing: border-box;
+}
+.cart-container{
+  position: relative;
+  width: 100%;
+  padding: 100px 10vw 10vh;
+  text-align: left;
+  .title{
+    display: block;
+    margin: 0 10px 10px;
+    font-size: 30px;
+    font-weight: 600;
+  }
+  table{
+    width: 100%;
+    margin-bottom: 70px;
+    border-top: 2px solid #000;
+    td{
+      font-size: 14px;
+      border-bottom: 1px dotted #000;
+    }
+    .delete{
+      cursor: pointer;
+    }
+    span{
+      padding: 0 3px;
+      cursor: pointer;
+    }
+  }
+  .continue-btn{
+    position: absolute;
+    font-size: 12px;
+    vertical-align: middle;
+    height: 30px;
+    cursor: pointer;
+    img{
+      width: 10px;
+      margin-right: 20px;
+    }
+  }
+  .btn-container{
+    position: absolute;
+    right: 10%;
+    display: flex;
+    align-items: center;
+    height: 20vh;
+    button{
+      width: 20vw;
+      height: 40px;
+      background-color: #000;
+      border: 1px solid #fff;
+      color: #fff;
+    }
+  }
+}
+
+@media screen and (max-width : 768px) {
+  .cart-container{
+    .title{
+      font-size: 20px;
+    }
+    table{
+      td{
+        font-size: 8px;
+      }
+    }
+    .btn-container{
+      button{
+        width: 30vw;
+      
+      }
+    }
+  }
+}

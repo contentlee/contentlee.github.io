@@ -1,0 +1,36 @@
+footer{
+  width: 100%;
+  height: 300px;
+  display: flex;
+  font-size: 10px;
+  padding: 0 10vw;
+  box-sizing: border-box;
+  .section{
+    text-align: left;
+    width: 25%;
+    padding: 50px 10px;
+    .title{
+      font-weight: 600;
+    }
+    p{
+      margin: 4px;
+    }
+  }
+  .logo{
+    width: 25%;
+    padding-top: 50px;
+  }
+}
+
+@media screen and (max-width : 768px) {
+  footer{
+    display: block;
+    .section{
+      width: 100%;
+      padding: 10px 0;
+    }
+    .logo{
+      padding: 10px 0 20px;
+    }
+  }
+}

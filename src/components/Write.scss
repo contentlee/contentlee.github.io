@@ -1,0 +1,57 @@
+section{
+  width: 100%;
+  padding: 80px 10vw 0;
+  overflow: hidden;
+  box-sizing: border-box;
+  text-align: center;
+  .write-container{
+    padding-top: 30px;
+    width: 100%;
+    height: 70%;
+    text-align: center;
+    .write{
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      .notice-title{
+        width: 50%;
+        font-size: 20px;
+        display: block;
+      }
+      .notice-contents{
+        width: 50%;
+        height: 400px;
+      }
+
+    }
+    
+  }
+  .complete{
+    width: 100px;
+    height: 40px;
+    background-color: #000;
+    border: 1px solid #fff;
+    color: #fff;
+    cursor: pointer;
+  }
+}
+@media screen and (max-width : 768px) {
+  section{
+    .write-container{
+      height: 50%;
+      .write{
+        .notice-title{
+          font-size: 16px;
+
+        }
+        .notice-contents{
+          font-size: 12px;
+        }
+  
+      }
+      
+    }
+  }
+}
