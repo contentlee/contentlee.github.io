@@ -17,7 +17,7 @@ function Edit(props){
   let [contents, contentsChg] = useState()
   let [date, dateChg] = useState()
  
-  function editbtn(){
+  let editbtn = ()=>{
     dispatch({
     type: 'editing',
     payload: {id:state.Write.length ,title: title, contents: contents}
@@ -33,7 +33,7 @@ function Edit(props){
           <textarea className='notice-contents' value={state.Write[id].contents} onChange={(e)=> contentsChg(e.target.value)}></textarea>
         </div>
       </div>
-      <button className='complete' onClick={editbtn}>작성완료</button>
+      <button className='complete' onClick={editbtn()}>작성완료</button>
     </section>
   )
 }

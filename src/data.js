@@ -1,13 +1,13 @@
 export default[{
   id : 0,
-  title : '의자',
-  price : 40000,
+  title : '연필',
+  price : 2000,
   stock : 30,
   shipping : 3000,
-  contents : '누구나 편안하게 앉을 수 있는 의자입니다.',
-  img :  'https://cdn.pixabay.com/photo/2016/11/18/15/54/apartment-1835482_1280.jpg',
-  hashtag : ['좋은의자', '편안한의자', '행복한의자'],
-  sort : 'Furniture',
+  contents : '끝까지 쓸 수 있는 튼튼한 연필입니다.',
+  img :  'https://cdn.pixabay.com/photo/2017/10/30/08/41/happiness-2901750_1280.png',
+  hashtag : ['고전적', '연필', '글쓰기'],
+  sort : 'Supplies',
   cart : 0,
   favorite : 0
 },
@@ -20,7 +20,7 @@ export default[{
   contents : '인테리어 소품으로 사용하기 좋은 조명입니다.',
   img :  'https://cdn.pixabay.com/photo/2019/08/20/14/21/light-fixtures-4418926_1280.jpg',
   hashtag : ['예쁜조명', '인테리어'],
-  sort : 'Furniture',
+  sort : 'ETC',
   cart : 0,
   favorite : 0
 },
@@ -39,27 +39,45 @@ export default[{
 },
 {
   id : 3,
-  title : '냉장고',
-  price : 230000,
+  title : '파스텔',
+  price : 17000,
   stock : 1,
   shipping : 3000,
-  contents : '문짝만 보이지만 냉장고입니다!',
-  img :  'https://cdn.pixabay.com/photo/2016/09/13/21/24/handles-1668281_1280.jpg',
-  hashtag : ['우리집냉장고', '차가운냉장고', '내앵장고'],
-  sort : 'Furniture',
+  contents : '쨍한 컬러의 파스텔입니다!',
+  img :  'https://cdn.pixabay.com/photo/2017/03/21/12/30/crayon-2162075_1280.jpg',
+  hashtag : ['색색깔', '쨍한컬러', '파스텔'],
+  sort : 'Supplies',
   cart : 0,
   favorite : 0
 },
 {
   id : 4,
-  title : '냉장고',
+  title : '만년필',
   price : 170000,
   stock : 1,
   shipping : 3000,
-  contents : '리퍼 상품으로 저렴한 가격에 만나보실 수 있습니다.',
-  img :  'https://cdn.pixabay.com/photo/2016/09/13/21/24/handles-1668281_1280.jpg',
-  hashtag : ['리퍼제품', '냉장고', '내앵장고'],
-  sort : 'Furniture',
+  contents : '고급스러운 만년필입니다.',
+  img :  'https://cdn.pixabay.com/photo/2016/11/22/23/09/fountain-pen-1851096_1280.jpg',
+  hashtag : ['잉크', '졸업선물', '만년필'],
+  sort : 'Supplies',
   cart : 0,
   favorite : 0
-}]
+},
+{
+  id : 5,
+  title : '계산기',
+  price : 8000,
+  stock : 1,
+  shipping : 3000,
+  contents : '계산을 간편하게!',
+  img :  'https://cdn.pixabay.com/photo/2014/07/06/13/55/calculator-385506_1280.jpg',
+  hashtag : ['은행', '사칙연산', '계산기'],
+  sort : 'ETC',
+  cart : 0,
+  favorite : 0
+}
+
+
+
+
+]

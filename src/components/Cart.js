@@ -10,7 +10,7 @@ function Cart(props){
   let dispatch = useDispatch();
  
   
-  function priceHab(){
+  let priceHab = function (){
     if(state.Cart.length>0){
       let count1 = state.Cart.map((product) => product.price*product.cart)
       .reduce(function(sum, currValue){
@@ -21,7 +21,7 @@ function Cart(props){
     }
   }
 
-  function shipping(){
+  let shipping = function (){
     if(state.Cart.length>0){
       let count2 = state.Cart.map((product) => product.shipping)
       .reduce(function(sum, currValue){
@@ -32,7 +32,7 @@ function Cart(props){
     }
   }
 
-  function total(){
+  let total = function (){
     if(state.Cart.length>0){
       let count3 = shipping() + priceHab()
       return count3
@@ -64,10 +64,10 @@ function Cart(props){
         </tr>
       </table>
     
-      <a className='continue-btn'>
-        <img src='img/arrow-back.svg'/>
+      <div className='continue-btn'>
+        <img src='img/arrow-back.svg' alt='arrowBack'/>
         <span onClick={()=>{history.goBack()}}>계속 쇼핑하기</span>
-      </a>
+      </div>
       
       <div className='btn-container'>
 
@@ -82,7 +82,7 @@ function Cart(props){
     <tr align='center'>
       <td>{props.state.id}</td>
       <td>{props.state.title}</td>
-      <td>{props.state.price}</td>
+      <td>￦{props.state.price}</td>
       <td height='60px' className='delete' onClick={()=>{
         props.dispatch({
           type: 'allDelete',

@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import {BrowserRouter, useHistory} from 'react-router-dom'
+import {BrowserRouter} from 'react-router-dom'
 import { Provider } from 'react-redux'
 import { combineReducers, createStore } from 'redux';
 
@@ -15,7 +15,7 @@ let inCart = []
 function Cart(state = inCart, action){
   if(action.type === 'addProduct'){
     let product = [...state];
-    let find = product.find((a)=> a.id == action.payload.id)
+    let find = product.find((a)=> a.id === action.payload.id)
     if(find===undefined){
       action.payload.cart++;
       product.push(action.payload);
@@ -30,7 +30,7 @@ function Cart(state = inCart, action){
       if(product[action.payload].cart>1){
         product[action.payload].cart--;
         return product 
-      } else if (product[action.payload].cart==1){
+      } else if (product[action.payload].cart===1){
         let product = [...state];
         product[action.payload].cart = 0
         product.splice(action.payload, 1);
@@ -60,7 +60,7 @@ let inFav=[]
 function Favor(state = inFav, action){
   if(action.type === 'addFav'){
     let product = [...state];
-    let find = product.find((a)=> a.id == action.payload.id)
+    let find = product.find((a)=> a.id === action.payload.id)
     if(find===undefined){
       action.payload.favorite++;
       product.push(action.payload);

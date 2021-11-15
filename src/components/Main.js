@@ -5,29 +5,30 @@ import { useSelector } from 'react-redux';
 
 function Main(props){
 
-  let state = useSelector((state) => state )
 
-  let [slider, sliderChg] = useState(1);
+
+  let state = useSelector((state) => state )
  
-  function sliderleftbtn(){
-    if(slider<=1){
-      sliderChg(3)
-    } else{
-      sliderChg(slider-1)
+  let [slider, change] = useState(0)
+  const RightSlide = ()=>{
+    if(slider<props.image.length-1){
+      change(++slider)
+    } else if(slider=props.image.length){
+      change(0)
     }
   }
-  function sliderrightbtn(){
-    if(slider>=3){
-      sliderChg(1)
-    } else{
-      sliderChg(slider+1)
-    }
+  const LeftSlide = ()=>{
+    if(slider>0){
+    change(--slider)
+  } else if(slider===0){
+    change(props.image.length-1)
   }
+}
+
+
 
   const [currentSlide, setCurrentSlide] = useState(0);
   const slideRef = useRef(null);
-  const cardRef = useRef(null);
-
   const AllSlides = props.products.length-4;
   
   const NextSlide = () => {
@@ -51,26 +52,33 @@ function Main(props){
       slideRef.current.style.transform = `translateX(${-19.7*(currentSlide)}vw)`; 
     }, [currentSlide]);
   
-
+    console.log(slider)
   return (
     <main>
       <div className='section1'>
         <div className='img-container'>
-          <img src={`img/slider${slider}.jpg`} className='slider'/>
+          {props.image.map((img, i)=>{
+            if (slider === i){
+              return <img src={img} alt={i}/>  
+            } else {
+              return null
+            }
+            
+          })}
         </div>
         <div className='btn-container'>
-          <img src='img/chevron-left.svg' className='left' onClick={sliderleftbtn}/>
-          <img src='img/chevron-right.svg' className='right' onClick={sliderrightbtn}/>
+          <img src='img/chevron-left.svg' className='left' alt='left' onClick={LeftSlide} />
+          <img src='img/chevron-right.svg' className='right' alt='right' onClick={RightSlide}/>
         </div>
       </div>
       <div className='section2'>
         <div className='card-container' ref={slideRef} >
           {props.products.map(function(product){
-            return <Card product={product} cardRef={cardRef}></Card>  
+            return <Card product={product}></Card>  
           })}
         </div>
-        <img src='img/chevron-left.svg' className='left' onClick={PrevSlide}/>
-        <img src='img/chevron-right.svg' className='right' onClick={NextSlide}/>
+        <img src='img/chevron-left.svg' className='left' alt='left' onClick={PrevSlide}/>
+        <img src='img/chevron-right.svg' className='right' alt='right' onClick={NextSlide}/>
       </div>
       <div className='section3'>
         <div className='notice'>
@@ -82,7 +90,7 @@ function Main(props){
         </div>
       </div>
       <div className='section4'>
-        <img className='notice-img' src='img/slider2.jpg'/>
+        <img className='notice-img' src='img/slider2.jpg' alt='notice'/>
       </div>
     </main>
   )
@@ -90,12 +98,12 @@ function Main(props){
 
 function Card(props){
   return(
-    <div className='product-card' ref={props.cardRef}>
+    <div className='product-card'>
       <Link to={`/detail/${props.product.id}`}>
-      <img className='product-img' src={props.product.img}/>
+      <img className='product-img' src={props.product.img} alt='product'/>
       <div className='product-info'>
         <div className='product-title'>{props.product.title}</div>
-        <div className='product-price'>{props.product.price}</div>
+        <div className='product-price'>￦{props.product.price}</div>
         <div className='product-contents'>{props.product.contents}</div>
         <div className='product-hashtag'>
           {props.product.hashtag.map((product)=>{

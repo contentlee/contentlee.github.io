@@ -10,7 +10,7 @@ function Notice(props){
   return (
     <section>
       <div className='btn-container'>
-      <Link to='/write'><button className='write-btn'>글쓰기</button></Link>
+        <Link to='/write'><button className='write-btn'>글쓰기</button></Link>
       </div>
      
       {state.Write.map((a,i)=>{

@@ -15,7 +15,7 @@ function Write(props){
   let [contents, contentsChg] = useState()
   let [date, dateChg] = useState()
  
-  function writebtn(){
+  let writebtn=()=>{
     dispatch({
     type: 'writing',
     payload: {id:state.Write.length ,title: title, contents: contents, date: date}

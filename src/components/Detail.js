@@ -1,5 +1,5 @@
 import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { Link, useParams, useHistory} from 'react-router-dom'
 import './Detail.scss'
 
@@ -9,7 +9,7 @@ function Detail(props){
   let detailProduct = props.products.find(function(product){
     return product.id == id
   })
-  let state = useSelector((state) => state );
+
   let dispatch = useDispatch();
  
   return(
@@ -19,8 +19,7 @@ function Detail(props){
       </span>
       <div className='section1'>
         <div className='product-container'>
-          <img className='product-img' src={detailProduct.img}/>
-          
+          <img className='product-img' src={detailProduct.img} alt='detailProduct'/>
           <div className='info-container'>
             <div className='product-info'>
               <div className='product-title'>{detailProduct.title}</div>
@@ -30,7 +29,7 @@ function Detail(props){
               </div>
               <div className='product-price'>
                 <span>판매가격</span>
-                <div className='price'>{detailProduct.price}</div>
+                <div className='price'>￦{detailProduct.price}</div>
               </div>
               <div className='product-plus'>
                 <span>구매혜택</span>

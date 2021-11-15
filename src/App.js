@@ -1,16 +1,17 @@
 import './App.css';
-import React, { useState, useEffect, lazy, Suspense }  from 'react';
-import { Link, Route, Switch, useHistory, useParams } from 'react-router-dom'
+import React, { useState, lazy, Suspense }  from 'react';
+import {Route, Switch} from 'react-router-dom'
 
 import data from './data';
+import image from './img';
 
 
 
 import MainHeader from './components/Header';
 import MainFooter from './components/Footer';
 import Main from './components/Main';
-import List from './components/List';
 import Loading from './components/Loading';
+let List = lazy(()=> import ('./components/List'));
 let Detail = lazy(()=> import('./components/Detail'));
 let Cart = lazy(()=>import('./components/Cart'));
 let Notice = lazy(()=>import('./components/Notice'));
@@ -23,6 +24,7 @@ let Edit = lazy(()=>import('./components/Edit'))
 
 function App() {
   let [products, productsChg] = useState(data);
+  let [img, imgChg] = useState(image);
 
 
   return (
@@ -31,11 +33,13 @@ function App() {
       <MainHeader></MainHeader>
       <Switch>      
         <Route exact path='/'>
-          <Main products={products}></Main>
+          <Main products={products} image={img}></Main>
         </Route>
 
         <Route exact path='/list'>
-          <List products={products}></List>
+          <Suspense fallback ={<Loading></Loading>}>
+            <List products={products}></List>
+          </Suspense>
         </Route>
         <Route path='/list/:sort'>
           <Suspense fallback ={<Loading></Loading>}>

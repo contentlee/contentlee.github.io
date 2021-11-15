@@ -30,10 +30,10 @@ function Favorite(props){
         </tr>
       </table>
     
-      <a className='continue-btn'>
-        <img src='img/arrow-back.svg'/>
+      <div className='continue-btn'>
+        <img src='img/arrow-back.svg' alt='arrow-back'/>
         <span onClick={()=>{history.goBack()}}>계속 쇼핑하기</span>
-      </a>
+      </div>
       
       <div className='btn-container'>
 
@@ -48,7 +48,7 @@ function Favorite(props){
     <tr align='center'>
       <td>{props.state.id}</td>
       <td>{props.state.title}</td>
-      <td>{props.state.price}</td>
+      <td>￦{props.state.price}</td>
       <td height='60px' className='delete' onClick={()=>{
         props.dispatch({
           type: 'Favor',

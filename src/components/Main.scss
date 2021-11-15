@@ -1,5 +1,8 @@
 div{
   box-sizing: border-box;
+
+
+  font-family: 'Noto Sans KR', sans-serif;
 }
 main{
   width: 100%;
@@ -21,7 +24,6 @@ main{
         display: block;
         position: absolute;
         object-fit: cover;
-        transition: all 1s;
       }
     }
     .btn-container{
@@ -184,6 +186,29 @@ main{
     }
     .section2{
     height: 15vh;
+    
+    .card-container{
+      .product-card{        
+        .product-info{
+          .product-title{
+            font-size: 16px;
+          }
+          .product-price{
+            font-size: 12px;
+            margin-bottom: 10px;
+          }
+          .product-contents{
+              font-size: 10px;
+              -webkit-line-clamp: 1;
+          }
+          .product-hashtag{
+            font-size: 10px;
+          }
+         
+        }
+      }
+    }
+
     }
     .section3{
       .notice{
